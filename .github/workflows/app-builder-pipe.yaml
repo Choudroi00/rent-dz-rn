@@ -52,17 +52,15 @@ jobs:
       - name: Setup EAS CLI
         run: pnpm install -g eas-cli@latest
 
-      - name: Authenticate with Expo
-        run: |
-          echo "$EXPO_TOKEN" | eas login --non-interactive
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
 
       - name: Configure EAS Build
         run: |
           if [ ! -f eas.json ]; then
-            eas build:configure --platform android --non-interactive
+            eas build --platform android --non-interactive
           fi
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
       - name: Install Android SDK (for Android builds)
         if: matrix.platform == 'android'
