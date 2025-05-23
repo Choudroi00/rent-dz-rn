@@ -34,7 +34,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            ~/.android/sdk
+            /usr/local/lib/android/sdk
           key: android-sdk-${{ runner.os }}-api-35-build-tools-35.0.0
           restore-keys: |
             android-sdk-${{ runner.os }}-api-35-
@@ -44,7 +44,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            $ANDROID_NDK_LATEST_HOME
+            /usr/local/lib/android/ndk/27.1.12297006
           key: android-ndk-${{ runner.os }}-ndk-27.1.12297006
           restore-keys: |
             android-ndk-${{ runner.os }}-ndk-
@@ -137,7 +137,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            ~/.android/sdk
+            /usr/local/lib/android/sdk/
           key: android-sdk-${{ runner.os }}-api-35-build-tools-35.0.0
           restore-keys: |
             android-sdk-${{ runner.os }}-api-35-
@@ -147,7 +147,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            $ANDROID_NDK_LATEST_HOME
+            /usr/local/lib/android/ndk/27.1.12297006
           key: android-ndk-${{ runner.os }}-ndk-27.1.12297006
           restore-keys: |
             android-ndk-${{ runner.os }}-ndk-
