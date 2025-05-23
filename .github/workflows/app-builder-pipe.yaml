@@ -22,7 +22,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
+          cache: 'pnpm'
+
+      - name: Setup Pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
 
       - name: Setup Java (for Android builds)
         if: matrix.platform == 'android'
@@ -38,13 +44,13 @@ jobs:
 #          xcode-version: 'latest-stable'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Setup Expo CLI
-        run: npm install -g @expo/cli@latest
+        run: pnpm install -g @expo/cli@latest
 
       - name: Setup EAS CLI
-        run: npm install -g eas-cli@latest
+        run: pnpm install -g eas-cli@latest
 
       - name: Authenticate with Expo
         run: |
