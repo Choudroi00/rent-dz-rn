@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-grey6: #FAFCFF;
+  --color-grey5: #F3F7FB;
+  --color-grey4: #ECF2F8;
+  --color-grey3: #E9EFF7;
+  --color-grey2: #E5EDF5;
+  --color-grey: #E2EAF3;
+  --color-background: #FAFCFF;
+  --color-foreground: #1B1C1D;
+  --color-root: #FAFCFF;
+  --color-card: #FAFCFF;
+  --color-destructive: #BA1A1A;
+  --color-primary: #0070E9;
+}
