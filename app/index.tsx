@@ -1,10 +1,13 @@
-import { Stack, Link } from 'expo-router';
+import { Stack, Link, useRouter } from 'expo-router';
 import { View, Text, Image } from 'react-native';
 
 import { Button } from '~/components/Button';
 import { Container } from '~/components/Container';
 
 export default function Home() {
+
+  const router = useRouter();
+
   return (
     <Container>
       <Stack.Screen options={{ title: 'Welcome' }} />
@@ -23,7 +26,7 @@ export default function Home() {
 
       {/* Bottom content: Button and Links */}
       <View className="w-full items-center mb-6">
-        <Button title="Let's get started" className="w-full" onPress={() => { /* TODO: Add navigation */ }} />
+        <Button title="Let's get started" className="w-full" onPress={() =>router.push('/(tabs)/home')} />
 
         <View className="flex-row justify-center mt-4">
           <Text className="text-gray-600 font-semibold ">Already have an account? </Text>
